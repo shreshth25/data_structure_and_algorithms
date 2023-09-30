@@ -39,13 +39,25 @@ class LinkList:
         self.head = new_node
     
     def count_nodes(self):
-        pass
+        c = 0
+        curr = self.head
+        while curr:
+            curr = curr.next
+            c+=1
+        print(f"No. of nodes are {c}")
 
     def middle_node(self):
-        pass
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        print(f"Middle element is {slow.val}")
 
     def reverse_node(self):
         pass
+
 
     def remove_duplicate(self):
         pass
@@ -58,4 +70,9 @@ l = LinkList()
 l.add_to_list(1)
 l.add_to_list(2)
 l.add_to_list(3)
+l.add_to_list(4)
+l.add_to_list(5)
+l.add_head(0)
 l.print_nodes()
+l.count_nodes()
+l.middle_node()
