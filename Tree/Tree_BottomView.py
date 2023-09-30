@@ -25,8 +25,8 @@ root.right.right = TreeNode(7)
 #        4     5  6    7
 
 
-# Top View of Tree
-def top_view(root):
+# Bottom View of Tree
+def bottom_view(root):
     q = []
     q1 = []
     mp = {}
@@ -37,11 +37,12 @@ def top_view(root):
         s = q1.pop(0)
         if not mp.get(s):
             mp[s] = node.val
-
+        mp[s] = node.val
 
         if node.left is not None:
             q.append(node.left)
             q1.append(s-1)
+            
         if node.right is not None:
             q.append(node.right)
             q1.append(s+1)
@@ -49,5 +50,5 @@ def top_view(root):
     # Now MP variable is the top view of the tree
     print(mp)        
 
-print("Printing the Top View of the Tree")
-top_view(root)
+print("Printing the Bottom View of the Tree")
+bottom_view(root)
